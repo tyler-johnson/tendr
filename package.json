@@ -1,0 +1,33 @@
+{
+	"name": "tender",
+	"version": "0.0.1a",
+	"author": {
+		"name": "Tyler Johnson",
+		"email": "tyler@vintyge.com",
+		"url": "http://vintyge.com"
+	},
+	"description": "",
+	"keywords": [],
+	"homepage": "",
+	"repository": {
+		"type": "git",
+		"url" : ""
+	},
+	"bugs": {
+		"url" : "",
+		"email" : "tyler@vintyge.com"
+	},
+	"main": "tender.js",
+	"dependencies": {
+		"connect": "*",
+		"caterpillar": "*",
+		"async": "*",
+		"nconf": "*",
+		"underscore": "*",
+		"mime": "*"
+	},
+	"engines": {
+		"node": "0.8.x",
+		"npm": "1.1.x"
+	}
+}
