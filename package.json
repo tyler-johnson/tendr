@@ -1,6 +1,6 @@
 {
 	"name": "tendr",
-	"version": "0.0.1a",
+	"version": "0.1.0b",
 	"author": {
 		"name": "Tyler Johnson",
 		"email": "tyler@vintyge.com",
@@ -8,13 +8,13 @@
 	},
 	"description": "Simple, flexible asset management for Node.js.",
 	"keywords": [],
-	"homepage": "",
+	"homepage": "https://github.com/appleifreak/tendr",
 	"repository": {
 		"type": "git",
-		"url" : ""
+		"url" : "https://github.com/appleifreak/tendr"
 	},
 	"bugs": {
-		"url" : "",
+		"url" : "https://github.com/appleifreak/tendr/issues",
 		"email" : "tyler@vintyge.com"
 	},
 	"main": "tendr.js",
