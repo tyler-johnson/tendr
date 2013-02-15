@@ -2,7 +2,7 @@
 
 Tendr is a simple, flexible asset manager for Node.js. Tendr is able to load files from anywhere and can store files anywhere. It works with the file system, urls, and even databases. Tendr is compatible with any file type and supports additional precompilation and compilation (like minification and template rendering). Tendr was built for [Turbo](https://github.com/appleifreak/Turbo), our content management platform, but will work in almost any environment.
 
-The name Tendr is actually short for [tender](http://en.wikipedia.org/wiki/Tender_(rail)), a type of train car containing the locomotive's fuel and water. So, if your web app is metaphorically an entire train, Tendr provides fuel for the engine. Enjoy!
+The name Tendr is actually short for [tender](http://en.wikipedia.org/wiki/Tender_%28rail%29), a type of train car containing the locomotive's fuel and water. So, if your web app is metaphorically an entire train, Tendr provides fuel for the engine. Enjoy!
 
 While Tendr has been seriously bug tested, we consider it to be beta software. This means that there are still probably more bugs and the API *might* change (although not dramatically).
 
