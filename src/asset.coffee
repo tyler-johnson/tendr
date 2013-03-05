@@ -4,6 +4,7 @@ path = require 'path'
 mime = require 'mime'
 Manager = require './manager'
 uuid = require 'node-uuid'
+crypto = require 'crypto'
 
 class Asset
 	constructor: (@name, options) ->
@@ -52,6 +53,11 @@ class Asset
 	
 	size: () ->
 		return @content.length
+
+	toHash: (hash, encoding) ->
+		hash ?= "md5"
+		encoding ?= "hex"
+		return crypto.createHash(hash).update(@toBuffer()).digest(encoding);
 	
 	toString: () ->
 		@content.toString.apply(@content, arguments)
@@ -65,6 +71,7 @@ class Asset
 		@toString()
 		
 	clone: () ->
+		utils.log "Cloning Asset `#{@name}`..."
 		obj = @toObject("content", "name", "options")
 		
 		asset = new @constructor(@name, @options)

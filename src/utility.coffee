@@ -5,7 +5,7 @@ _ = require 'underscore'
 
 # requirements
 # logic
-module.exports.opts = (options, defaults) ->
+opts = module.exports.opts = (options, defaults) ->
 	options = {} unless _.isObject options
 	defaults = {} unless _.isObject defaults
 	
@@ -47,3 +47,47 @@ crypto = require 'crypto'
 # logic	
 module.exports.md5 = (data) ->
 	return crypto.createHash('md5').update(data).digest('hex')
+
+
+### SimpleCache Class ###
+
+# requirements
+# logic	
+class SimpleCache
+	constructor: (options) -> 
+		@options = opts options, {
+			unique: false
+		}
+	
+		@cache = {}
+	
+	set: (key, value) ->
+		if @options.unique or !_.has(@cache, key) then @cache[key] = []
+		@cache[key].push(value)
+	
+	get: (key, index) ->
+		index ?= 0
+		if _.isArray(@cache[key]) then return @cache[key][index]
+	
+	all: (key) ->
+		if _.isArray(@cache[key]) then return @cache[key]
+	
+	has: (key) ->
+		return _.has(@cache, key)
+		
+	remove: (key, index) ->
+		if _.isArray(@cache[key])
+			if index? then delete @cache[key][index]
+			else delete @cache[key]
+	
+	find: (value) ->
+		k = null
+		_.find @cache, (vals, key) ->
+			if _.find(vals, (val) ->
+				if val is value then return true
+			)
+				k = key
+				return true
+		return k
+
+module.exports.SimpleCache = SimpleCache
